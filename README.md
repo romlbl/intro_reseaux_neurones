@@ -2,7 +2,7 @@
 
 Ce dépôt regroupe des projets Python implémentés uniquement avec NumPy. Aucune bibliothèque de deep learning (PyTorch, Keras, scikit-learn, etc.) ne fait le travail à notre place : propagation avant, rétropropagation, descente de gradient, fonctions d'activation et fonctions de perte sont entièrement codées à la main.
 
-L'objectif ici n'est pas la performance mais la compréhension profonde de ce qui se passe.
+L'objectif ici n'est pas la performance mais la compréhension de ce qui se passe.
 
 ---
 
@@ -31,7 +31,7 @@ Le réseau est entraîné sur la base d'images **MNIST**. La bibliothèque Tenso
 `784 pixels` ──► `[ 64 neurones ]` ──► `[ 10 neurones ]` ──► `chiffre prédit`
 
 ### Principe de fonctionnement
-1. **Propagation avant : l'image traverse les couches (produit matriciel + biais). La fonction d'activation utilisée est ReLU.
+1. **Propagation avant** : l'image traverse les couches (produit matriciel + biais). La fonction d'activation utilisée est ReLU.
 2. **Calcul de l'erreur** : erreur quadratique moyenne entre la prédiction et la vraie valeur. 
    * *Exemple de prédiction* : `[0.08, 0.07, 0.12, 0.14, 0.12, 0.09, 0.13, 0.13, 0.06, 0.06]` (prédiction maximale à l'indice 3, soit le chiffre 3).
    * *Cible réelle* : `[0, 0, 0, 0, 0, 0, 0, 0, 1, 0]` (le vrai chiffre est un 8).
@@ -46,7 +46,7 @@ Deuxième projet, bien plus ambitieux : faire apprendre à un réseau de neurone
 
 ### Modélisation
 * Le plateau de Puissance 4 est modélisé par un tableau de 42 cases (7 colonnes et 6 lignes).
-* Les règles et le fonctionnement du jeu sont implémentés via des fonctions Python pures.
+* Les règles et le fonctionnement du jeu sont implémentés via des fonctions Python.
 * Le réseau renvoie en sortie la colonne à jouer pour le prochain coup.
 
 ### Architectures comparées
