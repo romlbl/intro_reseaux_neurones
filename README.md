@@ -77,7 +77,7 @@ Trois approches, de la plus simple à la plus fine, ont été testées :
    * Pour chaque coup : on calcule le meilleur coup théorique selon le système de score, on mesure l'erreur entre le coup réellement joué et ce meilleur coup, puis on rétropropage. Le réseau apprend directement le "bon coup" à jouer.
 
 ### Problème détecté :
- En s'entraînant en *self-play*, le réseau finit systématiquement par adopter la stratégie triviale d'empiler 4 pions dans la même colonne sans contrer l'adversaire.
+ En s'entraînant contre lui même, le réseau finit par adopter la stratégie triviale d'empiler 4 pions dans la même colonne sans contrer l'adversaire.
  
 * **Cause possible** : Comme il joue contre lui-même (et qu'au début il est mauvais), l'empilement est la façon la plus rapide de trouver un schéma gagnant en 4 coups car son adversaire (lui-même ) a la même stratégie et donc ne l'empêche pas d'empiler . Il juge donc cette stratégie optimale.
 
